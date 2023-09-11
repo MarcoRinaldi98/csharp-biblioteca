@@ -35,6 +35,9 @@ utente1.StampaInfoUtente();
 // Aggiungo l'utente alla biblioteca
 biblioteca1.AggiungiUtente(utente1);
 
+// Registro un prestito
+biblioteca1.RegistraPrestito(libro1, utente1, DateTime.Now, DateTime.Now.AddDays(7));
+
 // Cerco documento per codice
 Documento documentoCercato = biblioteca1.CercaDocumentoPerCodice("#B1");
 if (documentoCercato != null)
@@ -51,4 +54,11 @@ List<Documento> documentiTrovati = biblioteca1.CercaDocumentoPerTitolo("Clean Co
 foreach (var doc in documentiTrovati)
 {
     Console.WriteLine("Documento trovato: " + doc.Titolo);
+}
+
+// Cerco il prestito in base al nome e cognome dell'utente
+List<Prestito> prestitiUtente = biblioteca1.CercaPrestitiPerUtente("Marco", "Rinaldi");
+foreach (var prestito in prestitiUtente)
+{
+    Console.WriteLine("Prestito di " + prestito.Documento.Titolo + " a " + prestito.Utente.Nome + " " + prestito.Utente.Cognome);
 }
