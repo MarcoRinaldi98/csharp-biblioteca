@@ -15,12 +15,12 @@ namespace csharp_biblioteca
         public Utente Utente { get; set; }
 
         // COSTRUTTORE
-        public Prestito(DateTime inizioPrestito, DateTime finePrestito, Documento documento, Utente utente)
+        public Prestito(Documento documento, Utente utente, DateTime inizioPrestito, DateTime finePrestito)
         {
-            this.InizioPrestito = inizioPrestito;
-            this.FinePrestito = finePrestito;
             this.Documento = documento;
             this.Utente = utente;
+            this.InizioPrestito = inizioPrestito;
+            this.FinePrestito = finePrestito;
         }
     }
 }

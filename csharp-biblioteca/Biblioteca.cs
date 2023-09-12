@@ -29,13 +29,7 @@ namespace csharp_biblioteca
         // Metodo per registrare un prestito
         public void RegistraPrestito(Documento documento, Utente utente, DateTime inizioPrestito, DateTime finePrestito)
         {
-            Prestito prestito = new Prestito
-            {
-                Documento = documento,
-                Utente = utente,
-                InizioPrestito = inizioPrestito,
-                FinePrestito = finePrestito
-            };
+            Prestito prestito = new Prestito(documento, utente, inizioPrestito, finePrestito);
             listaPrestiti.Add(prestito);
         }
         // Metodo per cercare un documento per codice
