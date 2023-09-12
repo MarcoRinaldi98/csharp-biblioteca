@@ -39,7 +39,7 @@ biblioteca1.AggiungiUtente(utente1);
 biblioteca1.RegistraPrestito(libro1, utente1, DateTime.Now, DateTime.Now.AddDays(7));
 
 // Cerco documento per codice
-Documento documentoCercato = biblioteca1.CercaDocumentoPerCodice("#B1");
+Documento documentoCercato = biblioteca1.CercaDocumentoPerCodice(libro1.Codice);
 if (documentoCercato != null)
 {
     Console.WriteLine("Documento trovato: " + documentoCercato.Titolo);

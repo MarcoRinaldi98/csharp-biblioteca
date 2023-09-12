@@ -33,7 +33,7 @@ namespace csharp_biblioteca
         private string GeneraCodiceRandom()
         {
             Random randomNumber = new Random();
-            return "#B" + randomNumber.Next(1, 5);
+            return "#B" + randomNumber.Next(1, 10000);
         }
         //Metodo per stampare a schermo le informazioni del documento
         public virtual void StampaInfoDocumento()
